@@ -10,12 +10,14 @@
     font-size: 25px;
     padding: 0 15px 0 15px;
     line-height: 0px;
+    margin-bottom: 7px;
 }
 
 // ===================Products===================
 
 .card {
-    border: 1px solid #cccccc;
+    height: 100%;
+    border: 1px solid #d6d5d5;
     padding: 6px;
 }
 
@@ -23,24 +25,28 @@
     font-weight: bold;
     display: flex;
     justify-content: space-between;
-    margin:  10px 0px 10px 0px;
+    margin: 10px 0px 10px 0px;
+    align-items: self-end;
 }
 
 .price {
     font-size: 25px;
 }
 
+.offer {
+    width: 100%;
+    height: 40px;
+    color: #ffffff;
+}
 
 .exclusive {
     background-color: #009900;
-    width: fit-content;
     padding: 12px;
-    color: #ffffff;
+    width: max-content;
 }
 
 .on-sale {
     background-color: #cc3333;
-    width: fit-content;
     padding: 12px;
-    color: #ffffff;
+    width: max-content;
 }
