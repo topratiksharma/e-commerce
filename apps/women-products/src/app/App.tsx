@@ -1,8 +1,7 @@
 import { Route, Switch } from 'react-router-dom';
 import styles from './app.module.scss';
-
-import Header from './products/header/Header';
-import Products from './products/Products';
+import Header from './components/products/header/Header';
+import Products from './components/products/Products';
 
 export function App() {
   return (
