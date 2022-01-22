@@ -1,26 +1,44 @@
 import { Component } from 'react';
-import { Route, Link } from 'react-router-dom';
 import './Products.module.scss';
+import ProductService from '../../core/products.service';
+import Header from './header/Header';
+import Product from './product/Product';
+import { ProductDetails } from './types';
 
 /* eslint-disable-next-line */
 export interface ProductsProps {}
 
-export class Products extends Component<ProductsProps> {
+export class Products extends Component {
+  state!: {
+    products: [];
+  };
+
   render() {
+    const products: ProductDetails[] = this.state?.products;
     return (
       <div>
-        <p>Welcome to Products!</p>
-        <ul>
-          <li>
-            <Link to="/">products root</Link>
-          </li>
-        </ul>
-        <Route
-          path="/"
-          render={() => <div>This is the products root route.</div>}
-        />
+        <Header></Header>
+        <div>
+          { products &&
+            products.map(
+              (item: ProductDetails) =>
+                // <tr key={item._id || item.id}>
+                //   {columns.map((column) => (
+                //     <td key={this.createKey(item, column)}>
+                //       {this.renderCell(item, column)}
+                //     </td>
+                //   ))}
+                // </tr>
+                <Product key={item.index} ProductDetails={item}></Product>
+            )}
+        </div>
       </div>
     );
+  }
+
+  async componentDidMount() {
+    const { data } = await ProductService.getAllProducts();
+    this.setState({ products: data });
   }
 }
 
