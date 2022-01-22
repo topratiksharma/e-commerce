@@ -1,21 +1,29 @@
-import { Component } from 'react';
-import { Route, Link } from 'react-router-dom';
 import { ProductDetails } from '../types';
 import './Product.module.scss';
 
-/* eslint-disable-next-line */
-export interface ProductProps  {
-  ProductDetails: ProductDetails;
-}
+type ProductProps = {
+  productDetails: ProductDetails;
+};
 
-export class Product extends Component<ProductProps> {
-  render() {
-    return (
+const Product: React.FC<ProductProps> = ({ productDetails }) => {
+  return (
+    <div className="card">
       <div>
-        <p>Welcome to Product!</p>
+        <img
+          src={'assets/' + productDetails.productImage}
+          alt={productDetails.productImage}
+        ></img>
+        {productDetails.isExclusive && (
+          <div className="exclusive">Exclusive</div>
+        )}
+        {productDetails.isSale && <div className="on-sale">Sale</div>}
+        <div className='details'>
+          <div>{productDetails.productName}</div>
+          <div className='price'>{productDetails.price}</div>
+        </div>
       </div>
-    );
-  }
-}
+    </div>
+  );
+};
 
 export default Product;

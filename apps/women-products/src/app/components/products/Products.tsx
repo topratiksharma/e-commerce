@@ -22,14 +22,7 @@ export class Products extends Component {
           { products &&
             products.map(
               (item: ProductDetails) =>
-                // <tr key={item._id || item.id}>
-                //   {columns.map((column) => (
-                //     <td key={this.createKey(item, column)}>
-                //       {this.renderCell(item, column)}
-                //     </td>
-                //   ))}
-                // </tr>
-                <Product key={item.index} ProductDetails={item}></Product>
+                <Product key={item.index} productDetails={item}></Product>
             )}
         </div>
       </div>

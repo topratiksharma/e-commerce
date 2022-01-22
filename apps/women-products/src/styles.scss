@@ -1,4 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
+
+// HEADER
 .header {
     background: #def1f4;
     display: flex;
@@ -8,4 +10,37 @@
     font-size: 25px;
     padding: 0 15px 0 15px;
     line-height: 0px;
+}
+
+// ===================Products===================
+
+.card {
+    border: 1px solid #cccccc;
+    padding: 6px;
+}
+
+.details {
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    margin:  10px 0px 10px 0px;
+}
+
+.price {
+    font-size: 25px;
+}
+
+
+.exclusive {
+    background-color: #009900;
+    width: fit-content;
+    padding: 12px;
+    color: #ffffff;
+}
+
+.on-sale {
+    background-color: #cc3333;
+    width: fit-content;
+    padding: 12px;
+    color: #ffffff;
 }
