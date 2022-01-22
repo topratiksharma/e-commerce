@@ -3,12 +3,11 @@ import './Products.module.scss';
 import ProductService from '../../core/products.service';
 import Header from './header/Header';
 import Product from './product/Product';
-import { ProductDetails } from './types';
+import { Filters, ProductDetails, TShirtSize } from './types';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import sortBy from 'lodash/sortBy';
 /* eslint-disable-next-line */
-export interface ProductsProps {}
 
 export class Products extends Component {
   state!: {
@@ -17,31 +16,33 @@ export class Products extends Component {
 
   onFilterChange = (filterBy: string) => {
     let products: ProductDetails[] = [];
-    if (filterBy === 'price') {
+    if (filterBy === Filters.PRICE) {
       products = sortBy(this.state.products, filterBy);
     } else {
-      const XS: ProductDetails[] = [];
-      const S: ProductDetails[] = [];
-      const M: ProductDetails[] = [];
-      const L: ProductDetails[] = [];
-      const XL: ProductDetails[] = [];
+      const extraSmall: ProductDetails[] = [],
+        small: ProductDetails[] = [],
+        medium: ProductDetails[] = [],
+        large: ProductDetails[] = [],
+        extraLarge: ProductDetails[] = [];
+
       this.state.products.forEach((eachProduct: ProductDetails) => {
-        if (eachProduct.size.includes('XS')) {
-          XS.push(eachProduct);
-        } else if (eachProduct.size.includes('S')) {
-          S.push(eachProduct);
-        } else if (eachProduct.size.includes('M')) {
-          M.push(eachProduct);
-        } else if (eachProduct.size.includes('L')) {
-          L.push(eachProduct);
+        if (eachProduct.size.includes(TShirtSize.EXTRA_SMALL)) {
+          extraSmall.push(eachProduct);
+        } else if (eachProduct.size.includes(TShirtSize.SMALL)) {
+          small.push(eachProduct);
+        } else if (eachProduct.size.includes(TShirtSize.MEDIUM)) {
+          medium.push(eachProduct);
+        } else if (eachProduct.size.includes(TShirtSize.LARGE)) {
+          large.push(eachProduct);
         } else {
-          XL.push(eachProduct);
+          extraLarge.push(eachProduct);
         }
       });
-      products = [...XS, ...S, ...M, ...L, ...XL];
+      products = [...extraSmall, ...small, ...medium, ...large, ...extraLarge];
     }
     this.setState({ products });
   };
+
   render() {
     const products: ProductDetails[] = this.state?.products;
     return (
