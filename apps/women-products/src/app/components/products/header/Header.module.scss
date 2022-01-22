@@ -1,3 +1,16 @@
-.header-background {
-    background: #0bc6e2;
+.header {
+    background: #def1f4;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    font-weight: bold;
+    font-size: 25px;
+    padding: 0 15px 0 15px;
+    line-height: 0px;
+    margin-bottom: 7px;
+}
+
+.filter {
+    height: 30px;
+    background-color: #ffffff;
 }

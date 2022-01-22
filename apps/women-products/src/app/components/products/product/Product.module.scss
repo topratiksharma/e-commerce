@@ -1,0 +1,36 @@
+
+
+.details {
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0px 10px 0px;
+    align-items: self-end;
+}
+.card-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.price {
+    font-size: 25px;
+}
+
+.offer {
+    width: 100%;
+    height: 40px;
+    color: #ffffff;
+}
+
+.exclusive {
+    background-color: #009900;
+    padding: 12px;
+    width: max-content;
+}
+
+.on-sale {
+    background-color: #cc3333;
+    padding: 12px;
+    width: max-content;
+}
