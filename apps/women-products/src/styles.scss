@@ -13,6 +13,11 @@
     margin-bottom: 7px;
 }
 
+.filter {
+    height: 30px;
+    background-color: #ffffff;
+}
+
 // ===================Products===================
 
 .card {
@@ -27,6 +32,11 @@
     justify-content: space-between;
     margin: 10px 0px 10px 0px;
     align-items: self-end;
+}
+.card-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .price {

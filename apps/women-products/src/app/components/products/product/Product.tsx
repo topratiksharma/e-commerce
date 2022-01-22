@@ -9,21 +9,23 @@ type ProductProps = {
 const Product: React.FC<ProductProps> = ({ productDetails }) => {
   return (
     <Box>
-      <div>
-        <img
-          src={'assets/' + productDetails.productImage}
-          alt={productDetails.productImage}
-        ></img>
+      <div className="card-details">
+        <div>
+          <img
+            src={'assets/' + productDetails.productImage}
+            alt={productDetails.productImage}
+          ></img>
+        </div>
         <div className="offer">
           {productDetails.isExclusive && (
             <div className="exclusive">Exclusive</div>
           )}
           {productDetails.isSale && <div className="on-sale">Sale</div>}
         </div>
-        <div className="details">
-          <div>{productDetails.productName}</div>
-          <div className="price">{productDetails.price}</div>
-        </div>
+      </div>
+      <div className="details">
+        <div>{productDetails.productName}</div>
+        <div className="price">{productDetails.price}</div>
       </div>
     </Box>
   );
