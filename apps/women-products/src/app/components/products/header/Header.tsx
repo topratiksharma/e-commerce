@@ -2,7 +2,6 @@ import { Component, useState } from 'react';
 import './Header.module.scss';
 import Select from '@mui/material/Select';
 import MenuItem from '@mui/material/MenuItem';
-
 /* eslint-disable-next-line */
 export interface HeaderProps {
   onFilterChange: (s: string) => void;
@@ -18,7 +17,6 @@ const Header: React.FC<HeaderProps> = ({ onFilterChange }) => {
       <div>
         <p>Women's tops</p>
       </div>
-
       <div>
         <Select
           className="filter"
