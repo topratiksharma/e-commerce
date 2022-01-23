@@ -7,7 +7,6 @@ import { Filters, ProductDetails, TShirtSize } from './types';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import sortBy from 'lodash/sortBy';
-/* eslint-disable-next-line */
 
 export class Products extends Component {
   state!: {
