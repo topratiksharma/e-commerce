@@ -1,3 +1,5 @@
+@import '../../../../scss/variable';
+
 .header {
     background: #def1f4;
     display: flex;
@@ -12,5 +14,16 @@
 
 .filter {
     height: 30px;
-    background-color: #ffffff;
+    background-color: $background;
+}
+
+@media only screen and (max-width: 450px) {
+    .header {
+        font-size: 16px;
+    }
+    
+    .filter {
+        height: 20px;
+        font-size: 14px !important;
+    }
 }
