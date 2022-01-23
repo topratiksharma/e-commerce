@@ -1,5 +1,5 @@
 import './Header.module.scss';
-import Select from '@mui/material/Select';
+import { ChangeEvent } from 'react';
 // import option from '@mui/material/option';
 
 export interface HeaderProps {
@@ -7,7 +7,7 @@ export interface HeaderProps {
 }
 
 const Header: React.FC<HeaderProps> = ({ onFilterChange }) => {
-  const handleChange = (event: any) => {
+  const handleChange = (event: ChangeEvent<HTMLSelectElement>) => {
     onFilterChange(event.target.value);
   };
 

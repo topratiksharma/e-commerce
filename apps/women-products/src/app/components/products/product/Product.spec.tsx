@@ -10,7 +10,7 @@ describe('Product', () => {
       isExclusive: true,
       isSale: false,
       price: '$2342',
-      productImage: 'product-1.jpej',
+      productImage: 'product-1.jpg',
       productName: 'test',
       size: []
     };
