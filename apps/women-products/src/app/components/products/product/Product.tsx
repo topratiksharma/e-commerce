@@ -24,7 +24,9 @@ const Product: React.FC<ProductProps> = ({ productDetails }) => {
         </div>
       </div>
       <div className="details">
-        <div>{productDetails.productName}</div>
+        <div className="product-name" title={productDetails.productName}>
+          {productDetails.productName}
+        </div>
         <div className="price">{productDetails.price}</div>
       </div>
     </Box>

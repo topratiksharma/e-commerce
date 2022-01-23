@@ -7,6 +7,11 @@
     margin: 10px 0px 10px 0px;
     align-items: self-end;
 }
+.product-name {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
 .card-details {
     display: flex;
     flex-direction: column;
@@ -25,12 +30,12 @@
 
 .exclusive {
     background-color: #009900;
-    padding: 12px;
+    padding: 12px 16px 12px 16px;
     width: max-content;
 }
 
 .on-sale {
     background-color: #cc3333;
-    padding: 12px;
+    padding: 12px 20px 12px 20px;
     width: max-content;
 }

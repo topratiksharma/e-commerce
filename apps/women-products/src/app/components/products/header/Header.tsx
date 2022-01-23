@@ -1,6 +1,5 @@
 import './Header.module.scss';
 import { ChangeEvent } from 'react';
-// import option from '@mui/material/option';
 
 export interface HeaderProps {
   onFilterChange: (s: string) => void;
