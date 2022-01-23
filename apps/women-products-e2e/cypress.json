@@ -1,5 +1,5 @@
 {
-  "fileServerFolder": ".",
+  "fileServerFolder": "../../dist/",
   "fixturesFolder": "./src/fixtures",
   "integrationFolder": "./src/integration",
   "modifyObstructiveCode": false,

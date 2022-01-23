@@ -1,8 +1,7 @@
-import { Component, useState } from 'react';
 import './Header.module.scss';
 import Select from '@mui/material/Select';
-import MenuItem from '@mui/material/MenuItem';
-/* eslint-disable-next-line */
+// import option from '@mui/material/option';
+
 export interface HeaderProps {
   onFilterChange: (s: string) => void;
 }
@@ -13,22 +12,20 @@ const Header: React.FC<HeaderProps> = ({ onFilterChange }) => {
   };
 
   return (
-    <div className="header">
-      <div>
+    <div className="header" data-cy="header">
+      <div data-cy="header-text">
         <p>Women's tops</p>
       </div>
-      <div>
-        <Select
+      <div data-cy="header-filter">
+        <select
           className="filter"
-          labelId="demo-simple-select-label"
-          id="demo-simple-select"
-          label="Filter"
+          id="product-filter"
           onChange={handleChange}
           defaultValue={'size'}
         >
-          <MenuItem value={'size'}>Filter by size</MenuItem>
-          <MenuItem value={'price'}>Filter by price</MenuItem>
-        </Select>
+          <option value={'size'}>Filter by size</option>
+          <option value={'price'}>Filter by price</option>
+        </select>
       </div>
     </div>
   );

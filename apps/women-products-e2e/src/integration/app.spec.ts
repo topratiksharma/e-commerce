@@ -1,13 +1,30 @@
-import { getGreeting } from '../support/app.po';
+import { getHeader, getProductFilter, productsJson } from '../support/app.po';
 
-describe('women-products', () => {
+describe('Home Page', () => {
   beforeEach(() => cy.visit('/'));
 
-  it('should display welcome message', () => {
-    // Custom command example, see `../support/commands.ts` file
-    cy.login('my-email@something.com', 'myPassword');
+  describe('Verify Header', () => {
+    it('should display header message', async () => {
+      getHeader().get('*[data-cy^="header-text"]').contains("Women's tops");
+    });
 
-    // Function helper example, see `../support/app.po.ts` file
-    getGreeting().contains('Welcome to women-products!');
+    it('should contain select filter', async () => {
+      getProductFilter().contains("select");
+    });
+
+    describe('Verify filter options', () => {
+      it('should select size by default', () => {
+        getProductFilter().should('have.value', 'size');
+      });
+      it('should select options and filter them as per selected filter', () => {
+        cy.wait(1000); // =>
+
+        getProductFilter().select('price');
+        getProductFilter().should('have.value', 'price');
+
+        getProductFilter().select('size');
+        getProductFilter().should('have.value', 'size');
+      });
+    });
   });
 });
