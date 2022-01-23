@@ -52,7 +52,7 @@ export class Products extends Component {
           <Grid container spacing={0}>
             {products &&
               products.map((item: ProductDetails) => (
-                <Grid item xs={3} className="card" key={item.index}>
+                <Grid item xs={12} sm={6} md={4} lg={4} xl={3} className="card" key={item.index}>
                   <Product productDetails={item}></Product>
                 </Grid>
               ))}
